@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/katuiche-run-first-scene/configuration/configuration.gd" type="Script" id=1]
+
+[node name="SandwichRunFirstSceneConfiguration" type="WindowDialog"]
+visible = true
+margin_right = 390.0
+margin_bottom = 120.0
+window_title = "Set shortcut"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 15.0
+margin_top = 18.0
+margin_right = 180.0
+margin_bottom = 32.0
+text = "Hold keys to set shortcut:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchor_right = 1.0
+margin_left = 10.0
+margin_top = 40.0
+margin_right = -10.0
+margin_bottom = 60.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PressedKeys" type="Label" parent="."]
+margin_left = 13.0
+margin_top = 67.0
+margin_right = 380.0
+margin_bottom = 91.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+visible = true
+margin_left = 171.103
+margin_top = 198.12
+margin_right = 254.103
+margin_bottom = 256.12
+window_title = ""
+dialog_text = "Shortcut set!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="popup_hide" from="." to="." method="_on_SandwichRunFirstSceneConfiguration_popup_hide"]
+[connection signal="confirmed" from="AcceptDialog" to="." method="_on_AcceptDialog_confirmed"]
